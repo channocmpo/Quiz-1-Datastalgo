@@ -27,7 +27,6 @@ No Vite configuration is used in this project.
 
 ## Dummy data and assets
 - `src/data/products.js` — contains a small list of the ice supplier's items (full/half blocks, tubes, wrapped ice) with images (Unsplash URLs) and prices.
-- `src/data/team.js` — contains team members with photos and bios.
 - `public/logo.svg` — simple svg logo used in header.
 
 # SIS — Santos Ice Services (SPA)
@@ -97,29 +96,3 @@ Open http://localhost:3000 in your browser. If port 3000 is busy on your machine
 ```powershell
 $env:PORT=3001; npm start
 ```
-
-## How to customize images and product data
-- Quick (recommended): copy your images into `public/images/` and update the `image` field in `src/data/products.js` to the root-relative path: `/images/your-file.jpg`.
-- Advanced: store images in `src/assets/images/` and import them in JS if you want the build to fingerprint assets. Example:
-  ```js
-  import fullBlock from '../assets/images/full-block.jpg'
-  // then use `image: fullBlock` in products data
-  ```
-
-## Accessibility & responsiveness
-- Images include `alt` attributes (product name) and Bootstrap responsive utilities are used for layout.
-
-## Known issues & notes
-- `npm audit` reports some vulnerabilities in 3rd-party packages (common for many projects). Run `npm audit` and consider `npm audit fix` to address non-breaking issues.
-
-## Suggested next improvements
-- Add a lightweight cart (client-side) with `localStorage` persistence.
-- Add a mobile CTA (phone/WhatsApp) for quick orders.
-- Add analytics (optional) and deploy the site on Netlify/Vercel with a small domain.
-
----
-
-If you want, I can now:
-- Start the dev server and confirm the site at `http://localhost:3000`.
-- Implement a client-side cart and persistence.
-- Deploy the site and share a public URL.
