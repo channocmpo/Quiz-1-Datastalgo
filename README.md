@@ -80,7 +80,6 @@ Notes: The `Contact` label is shown in the navigation as a non-clickable item pe
   - Wrapped ice: image provided by the user (downloaded to `public/images/wrapped.jpg`)
   - Bagged crushed ice: referenced thumbnail (downloaded to `public/images/bagged-crushed.jpg`)
 
-If SIS has an official website you want referenced for the rehaul comparison, provide that URL and I will add a short audit and rework notes. For this demo the client did not present a public website — assets were sourced from images provided by the user and public image URLs.
 
 ## How to run (development)
 Prerequisite: Node.js installed (LTS recommended).
