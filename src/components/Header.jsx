@@ -15,7 +15,6 @@ function Header() {
           <Navbar.Collapse id="main-nav">
             <Nav className="ms-auto">
               <Nav.Link as={NavLink} to="/" end>Home</Nav.Link>
-              {/* Menu removed - Home shows available items */}
               <Nav.Link as={NavLink} to="/about">About</Nav.Link>
               <Nav.Item>
                 <span className="nav-link disabled">Contact</span>

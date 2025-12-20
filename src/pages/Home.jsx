@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ProductCard from '../components/ProductCard'
-import products from '../data/products'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
+  const [items, setItems] = useState([])
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await axios.get('/products/')
+        setItems(data)
+      } catch (err) {
+        setError(err.message)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
   return (
     <main>
       <Container className="py-5">
@@ -21,10 +38,12 @@ export default function Home() {
         </section>
 
         <h2 className="mb-3">Available Items</h2>
+        {error && <p className="text-danger">{error}</p>}
         <Row>
-          {products.map(p => (
+          {items.map(p => (
             <Col key={p.id} xs={12} md={6} lg={4} className="mb-3">
               <ProductCard product={p} />
+              <Link to={`/products/${p.id}`}>View Details</Link>
             </Col>
           ))}
         </Row>
